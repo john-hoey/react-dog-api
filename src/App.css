@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+.header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: blueviolet;
+  color: white;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.dog-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  justify-content: center;
+  padding: 10px;
+}
+.dog-img {
+  height: 300px;
+  width: 300px;
+  object-fit: scale-down;
+}
+.dog-count-container {
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dog-count {
+  font-size: large;
+  font-weight: bold;
+  color: blueviolet;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fetch-dog-btn-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.fetch-dog-btn,
+.open-org-dog-btn {
+  background-color: blueviolet;
   color: white;
+  min-width: 300px;
+  margin-top: 5px;
+  padding: 5px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-height: 444px) {
+  .dog-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .dog-img {
+    height: 200px;
+    width: 200px;
+    object-fit: scale-down;
+  }
+  .dog-count-paragraph {
+    margin: 0;
+    padding: 0;
   }
 }
