@@ -43,6 +43,14 @@
   margin-top: 5px;
   padding: 5px;
 }
+.gh-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
 @media screen and (max-height: 444px) {
   .dog-section {
     display: flex;

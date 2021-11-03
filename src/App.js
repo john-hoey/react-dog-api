@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import ghlogo from "./images/github-logo.png";
 
 function App() {
   let [dogImgURL, setdogImgURL] = useState("");
@@ -48,6 +49,15 @@ function App() {
           </button>
         </div>
       </section>
+      <a
+        href="https://github.com/john-hoey/react-dog-api"
+        target="_blank"
+        rel="noreferrer"
+        className="gh-link"
+      >
+        <img src={ghlogo} alt="github icon and link" />
+        &nbsp;Browse the Source
+      </a>
     </main>
   );
 }
