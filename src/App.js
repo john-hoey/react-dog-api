@@ -4,13 +4,18 @@ import ghlogo from "./images/github-logo.png";
 
 function App() {
   let [dogImgURL, setdogImgURL] = useState("");
-  let [dogsCount, setDogsCount] = useState(1);
+  let [dogsCount, setDogsCount] = useState(0);
+
   const fetchRandomDog = () => {
     const randomDogAPIEndpoint = "https://dog.ceo/api/breeds/image/random";
     fetch(randomDogAPIEndpoint)
       .then((response) => response.json())
       .then((data) => setdogImgURL(data.message))
       .catch(console.error);
+  };
+
+  const incrementCounter = () => {
+    setDogsCount((dogsCount += 1));
   };
   const showDogInNewWindow = () => {
     window.open(dogImgURL);
@@ -25,7 +30,12 @@ function App() {
       <section className="dog-section">
         <div className="dog-img-container">
           {dogImgURL && (
-            <img src={dogImgURL} alt="random dog" className="dog-img" />
+            <img
+              src={dogImgURL}
+              alt="random dog"
+              className="dog-img"
+              onLoad={incrementCounter}
+            />
           )}
         </div>
         <div className="dog-count-container">
@@ -38,7 +48,6 @@ function App() {
           <button
             onClick={() => {
               fetchRandomDog();
-              setDogsCount((dogsCount += 1));
             }}
             className="fetch-dog-btn"
           >
